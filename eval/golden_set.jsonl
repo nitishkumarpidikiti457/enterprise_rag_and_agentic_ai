@@ -1,0 +1,50 @@
+{"question": "How quickly must a Class I recalled product be pulled from shelves?", "answer": "within 2 hours of notification", "source": "product_recall_policy.pdf", "section": "Recall Classes"}
+{"question": "Which SKUs are under active recall?", "answer": "HF-1042, HF-2210 and HF-3307", "source": "product_recall_policy.pdf", "section": "Current Recalls"}
+{"question": "Do customers need a receipt to return a recalled item?", "answer": "No, full refund without a receipt", "source": "product_recall_policy.pdf", "section": "Customer Refunds"}
+{"question": "What is the deadline to complete a Class III recall?", "answer": "72 hours", "source": "product_recall_policy.pdf", "section": "Recall Classes"}
+{"question": "How many days do customers have to return non-perishable items with a receipt?", "answer": "30 days", "source": "return_and_refund_policy.docx", "section": "General Returns"}
+{"question": "Can gift cards be returned?", "answer": "No, gift cards cannot be returned", "source": "return_and_refund_policy.docx", "section": "Exclusions"}
+{"question": "Up to what amount can a store manager approve a return outside policy?", "answer": "$150", "source": "return_and_refund_policy.docx", "section": "Manager Override"}
+{"question": "What is the return window for perishable items?", "answer": "7 days", "source": "return_and_refund_policy.docx", "section": "Perishables"}
+{"question": "What temperature must refrigerated cases hold products at?", "answer": "41 degrees Fahrenheit or below", "source": "food_safety_temperature_standards.pdf", "section": "Cold Holding"}
+{"question": "How often must case temperatures be logged?", "answer": "every 4 hours", "source": "food_safety_temperature_standards.pdf", "section": "Temperature Logs"}
+{"question": "What is the minimum hot holding temperature in the deli?", "answer": "135 degrees Fahrenheit", "source": "food_safety_temperature_standards.pdf", "section": "Hot Holding"}
+{"question": "How many attendance points does a no-call no-show earn?", "answer": "3 points", "source": "employee_handbook_attendance.docx", "section": "Attendance Points"}
+{"question": "How far in advance must associates call out?", "answer": "at least 2 hours before the shift", "source": "employee_handbook_attendance.docx", "section": "Call Outs"}
+{"question": "When are schedules posted?", "answer": "every Thursday", "source": "employee_handbook_attendance.docx", "section": "Scheduling"}
+{"question": "What is the maximum PTO a full-time associate can accrue per year?", "answer": "120 hours", "source": "paid_time_off_policy.md", "section": "Accrual"}
+{"question": "How much unused PTO carries over?", "answer": "up to 40 hours", "source": "paid_time_off_policy.md", "section": "Carryover"}
+{"question": "How far in advance must planned PTO be requested?", "answer": "14 days", "source": "paid_time_off_policy.md", "section": "Requests"}
+{"question": "What is the maximum cash allowed in a register till?", "answer": "$300", "source": "cash_handling_procedures.pdf", "section": "Till Limits"}
+{"question": "Which bills must be checked for counterfeits?", "answer": "$50 and $100 bills", "source": "cash_handling_procedures.pdf", "section": "Counterfeit Detection"}
+{"question": "How many points are needed for $1 off?", "answer": "100 points", "source": "loyalty_program_terms.docx", "section": "Redemption"}
+{"question": "When do loyalty points expire?", "answer": "12 months after they are earned", "source": "loyalty_program_terms.docx", "section": "Redemption"}
+{"question": "How much must a member spend to reach Gold tier?", "answer": "over $3,000 per year", "source": "loyalty_program_terms.docx", "section": "Tiers"}
+{"question": "What are the standard vendor payment terms?", "answer": "Net 45", "source": "vendor_onboarding_guide.pdf", "section": "Payment Terms"}
+{"question": "How much liability insurance must new vendors carry?", "answer": "$2 million general liability", "source": "vendor_onboarding_guide.pdf", "section": "Requirements"}
+{"question": "What is the minimum password length?", "answer": "14 characters", "source": "information_security_policy.md", "section": "Passwords"}
+{"question": "How quickly must security incidents be reported?", "answer": "within 1 hour", "source": "information_security_policy.md", "section": "Incident Reporting"}
+{"question": "How early does the opening manager arrive?", "answer": "60 minutes before opening", "source": "store_opening_checklist.docx", "section": "Before Opening"}
+{"question": "How many registers must be open at opening?", "answer": "at least 4", "source": "store_opening_checklist.docx", "section": "Registers"}
+{"question": "How often is Schedule II inventory counted?", "answer": "daily", "source": "pharmacy_operations_manual.pdf", "section": "Controlled Substances"}
+{"question": "What are pharmacy weekday hours?", "answer": "9:00 AM to 9:00 PM", "source": "pharmacy_operations_manual.pdf", "section": "Hours"}
+{"question": "What percentage of food waste was diverted from landfill in 2025?", "answer": "78 percent", "source": "sustainability_report_2025.pdf", "section": "Food Waste"}
+{"question": "How many stores have rooftop solar?", "answer": "twelve", "source": "sustainability_report_2025.pdf", "section": "Energy"}
+{"question": "What happens if an item scans higher than the shelf price?", "answer": "first item free, up to $10", "source": "pricing_and_promotions_guide.docx", "section": "Scan Guarantee"}
+{"question": "When are shelf tags updated?", "answer": "every Wednesday night", "source": "pricing_and_promotions_guide.docx", "section": "Price Changes"}
+{"question": "When is curbside pickup free?", "answer": "on orders over $35", "source": "delivery_and_pickup_service.md", "section": "Fees"}
+{"question": "How much does delivery cost?", "answer": "$7.95", "source": "delivery_and_pickup_service.md", "section": "Fees"}
+{"question": "How soon must spills be cleaned?", "answer": "within 5 minutes", "source": "workplace_safety_program.pdf", "section": "Spills"}
+{"question": "Who may operate balers and compactors?", "answer": "certified associates aged 18 or older", "source": "workplace_safety_program.pdf", "section": "Equipment"}
+{"question": "When does full physical inventory take place?", "answer": "twice a year, in January and July", "source": "inventory_management_procedures.docx", "section": "Cycle Counts"}
+{"question": "What shrink level triggers a loss prevention review?", "answer": "above 2.5 percent of sales", "source": "inventory_management_procedures.docx", "section": "Shrink"}
+{"question": "How quickly must customer complaints get a response?", "answer": "within 24 hours", "source": "customer_service_standards.md", "section": "Complaints"}
+{"question": "When must an additional register be opened?", "answer": "when more than 3 customers are waiting", "source": "customer_service_standards.md", "section": "Checkout"}
+{"question": "How many major allergens must be declared?", "answer": "nine", "source": "allergen_labeling_policy.pdf", "section": "Major Allergens"}
+{"question": "How are undeclared allergens treated?", "answer": "as a Class II recall at minimum", "source": "allergen_labeling_policy.pdf", "section": "Label Errors"}
+{"question": "What is the daily meal allowance for business travel?", "answer": "$65", "source": "travel_and_expense_policy.docx", "section": "Meals"}
+{"question": "How soon must expense reports be submitted?", "answer": "within 30 days of the trip", "source": "travel_and_expense_policy.docx", "section": "Submission"}
+{"question": "How long can power be out before refrigerated products need evaluation?", "answer": "more than 4 hours", "source": "emergency_response_plan.pdf", "section": "Power Outage"}
+{"question": "When do stores close before a hurricane?", "answer": "6 hours before tropical-storm-force winds", "source": "emergency_response_plan.pdf", "section": "Hurricanes"}
+{"question": "What blind-test win rate must private label products achieve?", "answer": "at least 60 percent", "source": "private_label_quality_standards.md", "section": "Testing"}
+{"question": "What supplier audit score requires a corrective action plan?", "answer": "below 85", "source": "private_label_quality_standards.md", "section": "Supplier Audits"}

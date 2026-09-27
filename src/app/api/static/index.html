@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enterprise RAG Agent</title>
+<style>
+  :root { --bg:#f7f7f5; --panel:#fff; --ink:#1d1d1b; --muted:#6b6b66; --line:#e3e2dc; --accent:#2f5d8a; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#161616; --panel:#1f1f1f; --ink:#ececea; --muted:#9a9a94; --line:#333; --accent:#7fb0e0; } }
+  * { box-sizing: border-box; }
+  body { margin:0; font:15px/1.5 system-ui, sans-serif; background:var(--bg); color:var(--ink); }
+  main { max-width: 860px; margin: 0 auto; padding: 24px 16px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  p.sub { color: var(--muted); margin: 0 0 20px; }
+  .panel { background: var(--panel); border:1px solid var(--line); border-radius:10px; padding:16px; margin-bottom:16px; }
+  input, select, button { font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); }
+  button { background: var(--accent); color: #fff; border: none; cursor: pointer; }
+  .row { display:flex; gap:8px; flex-wrap: wrap; }
+  .row > input[type=text] { flex: 1; min-width: 200px; }
+  #log .msg { margin: 12px 0; white-space: pre-wrap; }
+  .user { font-weight: 600; }
+  .steps { font-size: 13px; color: var(--muted); font-family: ui-monospace, monospace; }
+  .cites { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Enterprise RAG &amp; Agentic AI Platform</h1>
+  <p class="sub">Ask about company policies or sales/inventory data. The agent retrieves documents, queries the database, and cites its sources.</p>
+
+  <div class="panel" id="login">
+    <div class="row">
+      <input id="u" placeholder="username" value="admin">
+      <input id="p" type="password" placeholder="password" value="admin123">
+      <button onclick="login()">Sign in</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="row">
+      <input id="q" type="text" placeholder="e.g. Which recalled products had sales in Q2 2026?" onkeydown="if(event.key==='Enter')ask()">
+      <select id="prov"><option value="">auto-route</option><option>groq</option><option>gemini</option><option>anthropic</option><option>openai</option><option>extractive</option></select>
+      <button onclick="ask()">Ask</button>
+    </div>
+    <div id="log"></div>
+  </div>
+</main>
+<script>
+let token = null;
+const thread = 'web-' + Math.random().toString(36).slice(2, 8);
+async function login() {
+  const r = await fetch('/auth/token', {method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({username: u.value, password: p.value})});
+  if (!r.ok) { alert('Login failed'); return; }
+  token = (await r.json()).access_token;
+  document.getElementById('login').style.display = 'none';
+}
+function el(cls, text) { const d = document.createElement('div'); d.className = 'msg ' + cls; d.textContent = text; log.appendChild(d); return d; }
+async function ask() {
+  if (!token) { alert('Sign in first'); return; }
+  const text = q.value.trim(); if (!text) return; q.value = '';
+  el('user', text);
+  const steps = el('steps', ''); const ans = el('answer', ''); const cites = el('cites', '');
+  const r = await fetch('/chat', {method:'POST', headers:{'Content-Type':'application/json', Authorization:'Bearer '+token},
+    body: JSON.stringify({message:text, thread_id:thread, provider: prov.value || null, stream:true})});
+  const reader = r.body.getReader(); const dec = new TextDecoder(); let buf = '';
+  while (true) {
+    const {value, done} = await reader.read(); if (done) break;
+    buf += dec.decode(value, {stream:true});
+    const events = buf.split(/\r?\n\r?\n/); buf = events.pop();
+    for (const ev of events) {
+      const type = (ev.match(/^event: (.*)$/m) || [])[1];
+      const dataLine = (ev.match(/^data: (.*)$/m) || [])[1]; if (!dataLine) continue;
+      const data = JSON.parse(dataLine);
+      if (type === 'step') steps.textContent += '→ ' + JSON.stringify(data) + '\n';
+      if (type === 'token') ans.textContent += data;
+      if (type === 'done') cites.textContent = (data.citations||[]).map(c => `[${c.ref}] ${c.source}${c.page>0?' p.'+c.page:''}`).join('   ') + (data.model ? `   · ${data.model}` : '');
+      if (type === 'error') ans.textContent += '\n[error] ' + data.detail;
+    }
+  }
+}
+</script>
+</body>
+</html>
